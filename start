@@ -1,0 +1,5 @@
+!#/usr/bin/bash
+
+sonar() {
+	./sonarr/start.sh
+}
