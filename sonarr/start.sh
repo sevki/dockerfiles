@@ -2,12 +2,12 @@
 
 ID=$(id -u)
 
-docker create \
+docker run -d \
     --name sonarr \
-    -p 8989:8989 \
-    -e PUID=$ID -e PGID=$ID \
-    -e TZ=Europe/London \ 
+    --net=host \
+    -e PUID=$ID \
+    -e PGID=$ID \
     -v /etc/localtime:/etc/localtime:ro \
     -v /mnt/extSyn/sonarr:/config \
-    -v /mnt/extSyn/TV Shows:/tv \
-    linuxserver/sonarr
+    -v '/mnt/extSyn/TV Shows':/tv  \
+    plexinc/pms-docker
