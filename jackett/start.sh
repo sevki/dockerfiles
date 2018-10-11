@@ -9,4 +9,4 @@ docker run -d \
     -e PGID=$ID \
     -v /etc/localtime:/etc/localtime:ro \
     -v /mnt/extSyn/jackett:/config \
-    linuxserver/sonarr
+    linuxserver/jackett
